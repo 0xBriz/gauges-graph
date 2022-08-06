@@ -1,28 +1,22 @@
 goerli:
   network: goerli
   gaugeFactory:
-    address: '0x224E808FBD9e491Be8988B8A0451FBF777C81B8A'
-    transactionHash: '0x2d5d9089caf830b09e6ab586b56b140e6e0ab28d2d2070425bfb97ada9c95d08'
-    startBlock: 7001506
+    address: '0x2aD57703E977D8128ff9141172D47cc64e62207d'
+    startBlock: 7357562
   gaugeController:
-    address: '0xBB1CE49b16d55A1f2c6e88102f32144C7334B116'
-    transactionHash: '0x1bc729c9985648b7785d46fb806ceff3e32d1ef9963e664af7a5ba15d0b73b23'
-    startBlock: 7001464
+    address: '0xE79b03446cb0dc2273e170B197E141687296182b'
+    startBlock: 7357562
   votingEscrow:
-    address: '0x33A99Dcc4C85C014cf12626959111D5898bbCAbF'
-    transactionHash: '0x172ba908936fabe43044de42694598c9e0923500eabfebede6c97112005b255e'
-    startBlock: 7001463
+    address: '0xE40c9DbBCC6ab95C3f1664d72C428dace3F9D731'
+    startBlock: 7357562
 mainnet:
   network: bsc
   gaugeFactory:
     address: '0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC'
-    transactionHash: '0x69b9fe9b5530d8640cb66546dffd7deeca2bdf40e005caf3049836fa031b640d'
     startBlock: 14457664
   gaugeController:
     address: '0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD'
-    transactionHash: '0x69d0355862729073f8d25ef9d6d3ecaa1f001f7e339a465430326c931125b3c6'
     startBlock: 14457014
   votingEscrow:
     address: '0xC128a9954e6c874eA3d62ce62B468bA073093F25'
-    transactionHash: '0x3d421900747b1793d12c516b9d20057327a1057b76a56b98b0556d18d70571f3'
     startBlock: 14457013
