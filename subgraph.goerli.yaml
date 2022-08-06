@@ -4,16 +4,15 @@ repository: https://github.com/balancer-labs/gauges-subgraph/
 schema:
   file: ./schema.graphql
 dataSources:
-  {{#if gaugeFactory}}
   - kind: ethereum/contract
     name: GaugeFactory
     # prettier-ignore
-    network: {{network}}
+    network: goerli
     source:
-      address: '{{gaugeFactory.address}}'
+      address: '0x224E808FBD9e491Be8988B8A0451FBF777C81B8A'
       abi: GaugeFactory
       # prettier-ignore
-      startBlock: {{ gaugeFactory.startBlock }}
+      startBlock: 7001506
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -32,18 +31,16 @@ dataSources:
       eventHandlers:
         - event: GaugeCreated(indexed address,indexed address)
           handler: handleLiquidityGaugeCreated
-  {{/if}}
 
-  {{#if gaugeController}}
   - kind: ethereum/contract
     name: GaugeController
     # prettier-ignore
-    network: {{network}}
+    network: goerli
     source:
-      address: '{{gaugeController.address}}'
+      address: '0xBB1CE49b16d55A1f2c6e88102f32144C7334B116'
       abi: GaugeController
       # prettier-ignore
-      startBlock: {{ gaugeController.startBlock }}
+      startBlock: 7001464
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -61,17 +58,15 @@ dataSources:
           handler: handleNewGauge
         - event: VoteForGauge(uint256,address,address,uint256)
           handler: handleVoteForGauge
-  {{/if}}
-  {{#if votingEscrow}}
   - kind: ethereum/contract
     name: VotingEscrow
     # prettier-ignore
-    network: {{network}}
+    network: goerli
     source:
-      address: '{{votingEscrow.address}}'
+      address: '0x33A99Dcc4C85C014cf12626959111D5898bbCAbF'
       abi: votingEscrow
       # prettier-ignore
-      startBlock: {{ votingEscrow.startBlock }}
+      startBlock: 7001463
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -89,43 +84,11 @@ dataSources:
           handler: handleWithdraw
         - event: Supply(uint256,uint256)
           handler: handleSupply
-  {{/if}}
-  {{#if childChainGaugeFactory}}
-  - kind: ethereum/contract
-    name: ChildChainLiquidityGaugeFactory
-    # prettier-ignore
-    network: {{network}}
-    source:
-      address: '{{childChainGaugeFactory.address}}'
-      abi: ChildChainLiquidityGaugeFactory
-      # prettier-ignore
-      startBlock: {{ childChainGaugeFactory.startBlock }}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/gaugeFactory.ts
-      abis:
-        - name: ChildChainLiquidityGaugeFactory
-          file: ./abis/ChildChainLiquidityGaugeFactory.json
-        - name: RewardsOnlyGauge
-          file: ./abis/RewardsOnlyGauge.json
-        - name: LiquidityGauge
-          file: ./abis/LiquidityGaugeV5.json
-        - name: WeightedPool
-          file: ./abis/WeightedPool.json
-      entities:
-        - GaugeFactory
-        - LiquidityGauge
-      eventHandlers:
-        - event: RewardsOnlyGaugeCreated(indexed address,indexed address,address)
-          handler: handleRewardsOnlyGaugeCreated
-  {{/if}}
 templates:
   - kind: ethereum/contract
     name: LiquidityGauge
     # prettier-ignore
-    network: {{network}}
+    network: goerli
     source:
       abi: LiquidityGauge
     mapping:
@@ -150,7 +113,7 @@ templates:
   - kind: ethereum/contract
     name: RewardsOnlyGauge
     # prettier-ignore
-    network: {{network}}
+    network: goerli
     source:
       abi: RewardsOnlyGauge
     mapping:
