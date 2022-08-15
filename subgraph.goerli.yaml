@@ -9,10 +9,10 @@ dataSources:
     # prettier-ignore
     network: goerli
     source:
-      address: '0x2aD57703E977D8128ff9141172D47cc64e62207d'
+      address: '0xCC35ca868b48bd9C5658293081ee0E740667A979'
       abi: GaugeFactory
       # prettier-ignore
-      startBlock: 7357562
+      startBlock: 7369653
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -37,10 +37,10 @@ dataSources:
     # prettier-ignore
     network: goerli
     source:
-      address: '0xE79b03446cb0dc2273e170B197E141687296182b'
+      address: '0xCf4d79044BE5d593E3883fdc6fBe751Ce6a9Ec08'
       abi: GaugeController
       # prettier-ignore
-      startBlock: 7357562
+      startBlock: 7369653
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -63,10 +63,10 @@ dataSources:
     # prettier-ignore
     network: goerli
     source:
-      address: '0xE40c9DbBCC6ab95C3f1664d72C428dace3F9D731'
+      address: '0x050128022c139Dce6b6efb9AF01F0696e52ff7C1'
       abi: votingEscrow
       # prettier-ignore
-      startBlock: 7357562
+      startBlock: 7369653
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
