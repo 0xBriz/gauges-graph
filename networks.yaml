@@ -9,14 +9,15 @@ goerli:
   gaugeController:
     address: '0xCf4d79044BE5d593E3883fdc6fBe751Ce6a9Ec08'
     startBlock: 7369653
-mainnet:
+
+bsc:
   network: bsc
-  gaugeFactory:
-    address: '0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC'
-    startBlock: 14457664
-  gaugeController:
-    address: '0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD'
-    startBlock: 14457014
   votingEscrow:
-    address: '0xC128a9954e6c874eA3d62ce62B468bA073093F25'
-    startBlock: 14457013
+    address: '0x06Aba6E8F69A0Be680f96D923EFB682E63Db6a9f'
+    startBlock: 20460025
+  gaugeFactory:
+    address: '0xa6fe3E8b8dCd5badDBbEe9498f1Cb98B8C5E4f6a'
+    startBlock: 20460025
+  gaugeController:
+    address: '0x585ECE7932226CCf5A259c367781F07EBBB1950F'
+    startBlock: 20460025

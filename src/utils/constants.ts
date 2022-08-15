@@ -18,8 +18,8 @@ let network: string = dataSource.network();
 let controllerAddressByNetwork: AddressByNetwork = {
   mainnet: '0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD',
   kovan: '0x28bE1a58A534B281c3A22df28d3720323bfF331D',
-  goerli: '0xE79b03446cb0dc2273e170B197E141687296182b',
-  bsc: ''
+  goerli: '0xCf4d79044BE5d593E3883fdc6fBe751Ce6a9Ec08',
+  bsc: '0x585ECE7932226CCf5A259c367781F07EBBB1950F'
 };
 
 function forNetwork(
