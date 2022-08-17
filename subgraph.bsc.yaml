@@ -9,7 +9,7 @@ dataSources:
     # prettier-ignore
     network: bsc
     source:
-      address: '0xa6fe3E8b8dCd5badDBbEe9498f1Cb98B8C5E4f6a'
+      address: '0x0FA1097A49F54420CC5895455345dC605ee8d3c4'
       abi: GaugeFactory
       # prettier-ignore
       startBlock: 20460025
