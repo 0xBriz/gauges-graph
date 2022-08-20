@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Subgraph tracking Balancer Protocol's gauge system",
   "scripts": {
-    "deploy": "graph deploy 0xBriz/bsc-gauges subgraph.bsc.yaml --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/",
+    "deploy": "graph deploy 0xBriz/bsc-gauges --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/",
     "build": "graph build",
     "auth": "graph auth https://api.thegraph.com/deploy/",
     "lint": "eslint ./src",

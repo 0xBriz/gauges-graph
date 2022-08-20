@@ -10,7 +10,7 @@ goerli:
     address: '0xCf4d79044BE5d593E3883fdc6fBe751Ce6a9Ec08'
     startBlock: 7369653
 
-bsc:
+mainnet:
   network: bsc
   votingEscrow:
     address: '0x06Aba6E8F69A0Be680f96D923EFB682E63Db6a9f'
