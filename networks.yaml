@@ -14,10 +14,10 @@ mainnet:
   network: bsc
   votingEscrow:
     address: '0x06Aba6E8F69A0Be680f96D923EFB682E63Db6a9f'
-    startBlock: 20460025
+    startBlock: 20460108 
   gaugeFactory:
     address: '0x0FA1097A49F54420CC5895455345dC605ee8d3c4'
-    startBlock: 20460025
+    startBlock: 20495304
   gaugeController:
     address: '0x585ECE7932226CCf5A259c367781F07EBBB1950F'
-    startBlock: 20460025
+    startBlock: 20460156

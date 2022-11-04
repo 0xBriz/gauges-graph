@@ -27,6 +27,11 @@
         "type": "uint256[]"
       },
       {
+        "internalType": "address[]",
+        "name": "assetManagers",
+        "type": "address[]"
+      },
+      {
         "internalType": "uint256",
         "name": "swapFeePercentage",
         "type": "uint256"
@@ -216,7 +221,7 @@
         "type": "uint8"
       }
     ],
-    "stateMutability": "pure",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -232,7 +237,7 @@
         "type": "uint256"
       }
     ],
-    "name": "decreaseApproval",
+    "name": "decreaseAllowance",
     "outputs": [
       {
         "internalType": "bool",
@@ -365,12 +370,38 @@
   },
   {
     "inputs": [],
+    "name": "getProtocolFeesCollector",
+    "outputs": [
+      {
+        "internalType": "contract IProtocolFeesCollector",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getRate",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getScalingFactors",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
       }
     ],
     "stateMutability": "view",
@@ -411,11 +442,11 @@
       },
       {
         "internalType": "uint256",
-        "name": "amount",
+        "name": "addedValue",
         "type": "uint256"
       }
     ],
-    "name": "increaseApproval",
+    "name": "increaseAllowance",
     "outputs": [
       {
         "internalType": "bool",
@@ -639,7 +670,14 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -736,7 +774,7 @@
         "type": "uint256[]"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -790,18 +828,23 @@
         "type": "uint256[]"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "bool",
-        "name": "paused",
-        "type": "bool"
+        "internalType": "contract IERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "poolConfig",
+        "type": "bytes"
       }
     ],
-    "name": "setPaused",
+    "name": "setAssetManagerPoolConfig",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -895,6 +938,13 @@
         "type": "bool"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   }

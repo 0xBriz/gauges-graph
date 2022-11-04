@@ -10,6 +10,7 @@ type VotingEscrowLock @entity {
   unlockTime: BigInt
   lockedBalance: BigDecimal!
   votingEscrowID: VotingEscrow!
+  updatedAt: Int!
 }
 
 type GaugeFactory @entity {
@@ -28,6 +29,16 @@ type LiquidityGauge @entity {
   totalSupply: BigDecimal!
   shares: [GaugeShare!] @derivedFrom(field: "gauge")
   tokens: [RewardToken!] @derivedFrom(field: "gauge")
+  isKilled: Boolean!
+
+  " Reference to Gauge entity - created when LiquidityGauge is added to GaugeController"
+  gauge: Gauge
+
+  " Whether the LiquidityGauge is the most recent added to GaugeController "
+  isPreferentialGauge: Boolean!
+
+  " Reference to Pool entity "
+  pool: Pool
 }
 
 enum Chain {
@@ -45,6 +56,32 @@ type Gauge @entity {
   id: ID!
   address: Bytes!
   type: GaugeType!
+
+  " Timestamp at which Balancer DAO added the gauge to GaugeController [seconds] "
+  addedTimestamp: Int!
+
+  " Reference to LiquidityGauge "
+  liquidityGauge: LiquidityGauge
+}
+
+type Pool @entity {
+  " Address of the pool (lp_token of the gauge) "
+  id: ID!
+
+  " Pool ID if lp_token is a Balancer pool; null otherwise "
+  poolId: Bytes
+
+  " Address of the pool (lp_token of the gauge) "
+  address: Bytes!
+
+  " Most recent, unkilled gauge in the GaugeController "
+  preferentialGauge: LiquidityGauge
+
+  " List of the pool's gauges addresses "
+  gaugesList: [Bytes!]!
+
+  " List of gauges created for the pool "
+  gauges: [LiquidityGauge!] @derivedFrom(field: "pool")
 }
 
 type RewardToken @entity {

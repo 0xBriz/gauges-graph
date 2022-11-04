@@ -25,6 +25,8 @@ dataSources:
           file: ./abis/LiquidityGaugeV5.json
         - name: WeightedPool
           file: ./abis/WeightedPool.json
+        - name: Vault
+          file: ./abis/Vault.json
       entities:
         - GaugeFactory
         - LiquidityGauge
@@ -110,27 +112,3 @@ templates:
       callHandlers:
         - function: deposit_reward_token(address,uint256)
           handler: handleDepositRewardToken
-  - kind: ethereum/contract
-    name: RewardsOnlyGauge
-    # prettier-ignore
-    network: goerli
-    source:
-      abi: RewardsOnlyGauge
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/gauge.ts
-      entities:
-        - LiquidityGauge
-        - UserGaugeShare
-      abis:
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: RewardsOnlyGauge
-          file: ./abis/RewardsOnlyGauge.json
-        - name: LiquidityGauge
-          file: ./abis/LiquidityGaugeV5.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
